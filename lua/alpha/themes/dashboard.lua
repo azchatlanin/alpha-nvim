@@ -17,6 +17,18 @@ local default_header = {
     },
 }
 
+local default_header_projects = {
+    type = "text",
+    val = {
+        [[PROJECTS                                          ]],
+    },
+    opts = {
+        position = "center",
+        hl = "Type",
+        -- wrap = "overflow";
+    },
+}
+
 local footer = {
     type = "text",
     val = "",
@@ -62,35 +74,39 @@ end
 local buttons = {
     type = "group",
     val = {
-        button("e", "  New file", "<cmd>ene <CR>"),
-        button("SPC f f", "  Find file"),
-        button("SPC f h", "  Recently opened files"),
-        button("SPC f r", "  Frecency/MRU"),
-        button("SPC f g", "  Find word"),
-        button("SPC f m", "  Jump to bookmarks"),
-        button("SPC s l", "  Open last session"),
+      button("e", "  New file", "<cmd>ene <CR>"),
+      button("SPC f f", "  Find file"),
+      button("SPC f h", "  Recently opened files"),
+      button("SPC f r", "  Frecency/MRU"),
+      button("SPC f g", "  Find word"),
+      button("SPC f m", "  Jump to bookmarks"),
+      button("SPC s l", "  Open last session"),
     },
     opts = {
-        spacing = 1,
+       spacing = 1,
     },
 }
 
 local section = {
     header = default_header,
     buttons = buttons,
+    header_projects = default_header_projects,
     footer = footer,
 }
 
 local opts = {
     layout = {
-        { type = "padding", val = 2 },
-        section.header,
-        { type = "padding", val = 2 },
-        section.buttons,
-        section.footer,
+      { type = "padding", val = 2 },
+      section.header,
+      { type = "padding", val = 2 },
+      section.buttons,
+      { type = "padding", val = 2 },
+      section.default_header_projects,
+      { type = "padding", val = 2 },
+      section.footer,
     },
     opts = {
-        margin = 5,
+       margin = 5,
     },
 }
 
