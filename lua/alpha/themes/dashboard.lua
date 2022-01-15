@@ -87,10 +87,27 @@ local buttons = {
     },
 }
 
+local projects = {
+    type = "group",
+    val = {
+      button("e", "  New file", "<cmd>ene <CR>"),
+      button("SPC f f", "  Find file"),
+      button("SPC f h", "  Recently opened files"),
+      button("SPC f r", "  Frecency/MRU"),
+      button("SPC f g", "  Find word"),
+      button("SPC f m", "  Jump to bookmarks"),
+      button("SPC s l", "  Open last session"),
+    },
+    opts = {
+       spacing = 1,
+    },
+}
+
 local section = {
     header = default_header,
     buttons = buttons,
     header_projects = default_header_projects,
+    projects = projects,
     footer = footer,
 }
 
@@ -103,6 +120,8 @@ local opts = {
       { type = "padding", val = 2 },
       section.header_projects,
       { type = "padding", val = 2 },
+      section.projects,
+      { type = "padding", val = 2 },
       section.footer,
     },
     opts = {
@@ -112,6 +131,7 @@ local opts = {
 
 return {
     button = button,
+    projects = projects,
     section = section,
     opts = opts,
 }
