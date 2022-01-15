@@ -101,7 +101,7 @@ local opts = {
       { type = "padding", val = 2 },
       section.buttons,
       { type = "padding", val = 2 },
-      section.default_header_projects,
+      section.header_projects,
       { type = "padding", val = 2 },
       section.footer,
     },
