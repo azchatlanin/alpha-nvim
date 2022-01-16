@@ -13,11 +13,6 @@ local cursor_ix = 1
 local cursor_jumps = {}
 local cursor_jumps_press = {}
 local cursor_jumps_press_queue = {}
-local open = false
-
-local function is_open()
-  return is_open
-end
 
 local function noop() end
 
@@ -566,10 +561,8 @@ function alpha.start(on_vimenter, opts)
         cursor_jumps = {}
         cursor_jumps_press = {}
         alpha.redraw = noop
-        open = false;
         vim.cmd([[au! alpha_temp]])
     end
-    open = true
     draw()
     vim.cmd([[doautocmd User AlphaReady]])
     keymaps(opts, state)
